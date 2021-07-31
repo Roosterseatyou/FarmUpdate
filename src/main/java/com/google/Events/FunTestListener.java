@@ -51,6 +51,7 @@ public class FunTestListener implements Listener {
             }
         }
     }
+    //Just need to get the item for testing lmao. Will remove after i decide on a recipe :)
     @EventHandler
     public void onPlayerShift(PlayerToggleSneakEvent e){
         Player p = e.getPlayer();
