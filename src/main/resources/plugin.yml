@@ -1,0 +1,6 @@
+name: MiniFarmUpdate
+version: ${project.version}
+main: com.google.Main
+api-version: 1.17
+authors: [ Roosterseatyou ]
+description: A Miniature Farming update, as Mojang won't do it...
