@@ -1,4 +1,4 @@
-package com.google.Items.Hoes;
+package com.google.items.hoes;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -6,31 +6,29 @@ import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-public class TillingHoe {
-    public static ItemStack TillingHoe;
+public class ReplantingHoe {
+    public static ItemStack ReplantHoe;
 
     public static ItemStack init() {
-        tillingHoe();
+        replantHoe();
         return null;
     }
 
-    public static void tillingHoe(){
+    public static void replantHoe(){
         ItemStack item = new ItemStack(Material.IRON_HOE);
         ItemMeta meta = item.getItemMeta();
         List<Component> lore = new ArrayList<>();
-        meta.displayName(Component.text("Tilling Hoe").color(TextColor.fromHexString("9606A5")));
+        meta.displayName(Component.text("Replant Hoe").color(TextColor.fromHexString("9606A5")));
         meta.addEnchant(Enchantment.DURABILITY, 5, true);
         lore.add(Component.text("Abitity:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
-        lore.add(Component.text("Tills in a 3x3").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
+        lore.add(Component.text("Replants your Crops").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
         item.setItemMeta(meta);
-        TillingHoe = item;
+        ReplantHoe = item;
     }
 }

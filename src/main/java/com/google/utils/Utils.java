@@ -1,13 +1,11 @@
-package com.google.Utils;
+package com.google.utils;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.BlockIterator;
 
-import java.awt.*;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Random;

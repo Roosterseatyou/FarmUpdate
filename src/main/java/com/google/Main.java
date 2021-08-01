@@ -1,9 +1,8 @@
 package com.google;
 
-import com.google.Events.Listeners;
-import com.google.Items.Hoes.ReplantingHoe;
-import com.google.Items.Hoes.TillingHoe;
-import org.bukkit.Material;
+import com.google.events.Listeners;
+import com.google.items.hoes.ReplantingHoe;
+import com.google.items.hoes.TillingHoe;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 

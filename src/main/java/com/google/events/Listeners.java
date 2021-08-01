@@ -1,16 +1,15 @@
-package com.google.Events;
+package com.google.events;
 
-import com.google.Items.Hoes.ReplantingHoe;
-import com.google.Items.Hoes.TillingHoe;
+import com.google.items.hoes.ReplantingHoe;
+import com.google.items.hoes.TillingHoe;
 import com.google.Main;
-import com.google.Utils.Utils;
+import com.google.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Ageable;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
