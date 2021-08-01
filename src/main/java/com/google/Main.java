@@ -1,6 +1,6 @@
 package com.google;
 
-import com.google.Events.FunTestListener;
+import com.google.Events.Listeners;
 import com.google.Items.Hoes.ReplantingHoe;
 import com.google.Items.Hoes.TillingHoe;
 import org.bukkit.Material;
@@ -14,7 +14,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new FunTestListener(), this);
+        getServer().getPluginManager().registerEvents(new Listeners(), this);
         TillingHoe.init();
         ReplantingHoe.init();
         instance = this;

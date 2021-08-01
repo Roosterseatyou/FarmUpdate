@@ -24,7 +24,7 @@ import org.bukkit.inventory.PlayerInventory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FunTestListener implements Listener {
+public class Listeners implements Listener {
     @EventHandler
     public void onPlayerTill(PlayerInteractEvent e){
         Player p = e.getPlayer();
