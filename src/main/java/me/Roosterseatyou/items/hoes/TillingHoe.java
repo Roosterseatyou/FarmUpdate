@@ -1,4 +1,4 @@
-package com.google.items.hoes;
+package me.Roosterseatyou.items.hoes;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;

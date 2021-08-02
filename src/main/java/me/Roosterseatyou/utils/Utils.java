@@ -1,6 +1,6 @@
-package com.google.utils;
+package me.Roosterseatyou.utils;
 
-import com.google.Main;
+import me.Roosterseatyou.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;

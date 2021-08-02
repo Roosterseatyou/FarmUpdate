@@ -1,10 +1,10 @@
-package com.google.events;
+package me.Roosterseatyou.events;
 
-import com.google.items.hoes.PotatoHoe;
-import com.google.items.hoes.ReplantingHoe;
-import com.google.items.hoes.TillingHoe;
-import com.google.items.hoes.WheatHoe;
-import com.google.utils.Utils;
+import me.Roosterseatyou.items.hoes.PotatoHoe;
+import me.Roosterseatyou.items.hoes.ReplantingHoe;
+import me.Roosterseatyou.items.hoes.TillingHoe;
+import me.Roosterseatyou.items.hoes.WheatHoe;
+import me.Roosterseatyou.utils.Utils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
