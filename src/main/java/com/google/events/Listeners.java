@@ -1,5 +1,6 @@
 package com.google.events;
 
+import com.google.items.hoes.PotatoHoe;
 import com.google.items.hoes.ReplantingHoe;
 import com.google.items.hoes.TillingHoe;
 import com.google.items.hoes.WheatHoe;
@@ -89,19 +90,36 @@ public class Listeners implements Listener {
     public void onPlayerHarvestWheat(BlockBreakEvent e){
         Player p = e.getPlayer();
         Block b = e.getBlock();
-        int rIntWheat = Utils.randomInteger(7, 15);
+        int rIntWheat = Utils.randomInteger(3, 8);
         int rIntSeeds = Utils.randomInteger(2, 5);
         ItemStack wheat = new ItemStack(Material.WHEAT, rIntWheat);
         ItemStack seeds = new ItemStack(Material.WHEAT_SEEDS, rIntSeeds);
-        if(Utils.itemInHandEquals(p, WheatHoe.WheatHoe)){
-            if(b.getType() == Material.WHEAT) {
+        if(Utils.itemInHandEquals(p, WheatHoe.WheatHoe)) {
+            if (b.getType() == Material.WHEAT) {
                 if (p.getInventory().firstEmpty() != -1) {
                     p.getInventory().addItem(wheat);
                     p.getInventory().addItem(seeds);
-                }else{
+                } else {
                     Location loc = b.getLocation();
-                    loc.getWorld().dropItemNaturally(loc,wheat);
+                    loc.getWorld().dropItemNaturally(loc, wheat);
                     loc.getWorld().dropItemNaturally(loc, seeds);
+                }
+            }
+        }
+    }
+    @EventHandler
+    public void onPlayerHarvestPotatoes(BlockBreakEvent e){
+        Player p = e.getPlayer();
+        Block b = e.getBlock();
+        int rIntProduct = Utils.randomInteger(5, 10);
+        ItemStack wheat = new ItemStack(Material.POTATO, rIntProduct);
+        if(Utils.itemInHandEquals(p, PotatoHoe.PotatoHoe)) {
+            if (b.getType() == Material.POTATOES) {
+                if (p.getInventory().firstEmpty() != -1) {
+                    p.getInventory().addItem(wheat);
+                } else {
+                    Location loc = b.getLocation();
+                    loc.getWorld().dropItemNaturally(loc, wheat);
                 }
             }
         }
@@ -115,6 +133,7 @@ public class Listeners implements Listener {
             p.getInventory().addItem(ReplantingHoe.ReplantHoe);
             p.getInventory().addItem(TillingHoe.TillingHoe);
             p.getInventory().addItem(WheatHoe.WheatHoe);
+            p.getInventory().addItem(PotatoHoe.PotatoHoe);
         }
     }
 }

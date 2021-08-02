@@ -1,6 +1,7 @@
 package com.google;
 
 import com.google.events.Listeners;
+import com.google.items.hoes.PotatoHoe;
 import com.google.items.hoes.ReplantingHoe;
 import com.google.items.hoes.TillingHoe;
 import com.google.items.hoes.WheatHoe;
@@ -18,6 +19,7 @@ public final class Main extends JavaPlugin {
         TillingHoe.init();
         ReplantingHoe.init();
         WheatHoe.init();
+        PotatoHoe.init();
         instance = this;
 
     }
