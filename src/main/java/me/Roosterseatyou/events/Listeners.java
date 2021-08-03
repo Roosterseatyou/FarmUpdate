@@ -1,24 +1,29 @@
 package me.Roosterseatyou.events;
 
-import me.Roosterseatyou.items.hoes.PotatoHoe;
-import me.Roosterseatyou.items.hoes.ReplantingHoe;
-import me.Roosterseatyou.items.hoes.TillingHoe;
-import me.Roosterseatyou.items.hoes.WheatHoe;
+import me.Roosterseatyou.items.hoes.*;
 import me.Roosterseatyou.utils.Utils;
+import org.bukkit.CropState;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.block.BlockState;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockDropItemEvent;
+import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
+import java.io.Console;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Listeners implements Listener {
@@ -90,6 +95,7 @@ public class Listeners implements Listener {
     public void onPlayerHarvestWheat(BlockBreakEvent e){
         Player p = e.getPlayer();
         Block b = e.getBlock();
+        e.setDropItems(false);
         int rIntWheat = Utils.randomInteger(3, 8);
         int rIntSeeds = Utils.randomInteger(2, 5);
         ItemStack wheat = new ItemStack(Material.WHEAT, rIntWheat);
@@ -111,6 +117,7 @@ public class Listeners implements Listener {
     public void onPlayerHarvestPotatoes(BlockBreakEvent e){
         Player p = e.getPlayer();
         Block b = e.getBlock();
+        e.setDropItems(false);
         int rIntProduct = Utils.randomInteger(5, 10);
         ItemStack wheat = new ItemStack(Material.POTATO, rIntProduct);
         if(Utils.itemInHandEquals(p, PotatoHoe.PotatoHoe)) {
