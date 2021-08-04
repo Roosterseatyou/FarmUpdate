@@ -17,6 +17,7 @@ public final class Main extends JavaPlugin {
         ReplantingHoe.init();
         WheatHoe.init();
         PotatoHoe.init();
+        CarrotHoe.init();
         instance = this;
 
     }

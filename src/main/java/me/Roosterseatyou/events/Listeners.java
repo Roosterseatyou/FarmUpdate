@@ -2,28 +2,19 @@ package me.Roosterseatyou.events;
 
 import me.Roosterseatyou.items.hoes.*;
 import me.Roosterseatyou.utils.Utils;
-import org.bukkit.CropState;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.BlockState;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockDropItemEvent;
-import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
-
-import java.io.Console;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class Listeners implements Listener {
@@ -98,16 +89,16 @@ public class Listeners implements Listener {
         e.setDropItems(false);
         int rIntWheat = Utils.randomInteger(3, 8);
         int rIntSeeds = Utils.randomInteger(2, 5);
-        ItemStack wheat = new ItemStack(Material.WHEAT, rIntWheat);
+        ItemStack product = new ItemStack(Material.WHEAT, rIntWheat);
         ItemStack seeds = new ItemStack(Material.WHEAT_SEEDS, rIntSeeds);
         if(Utils.itemInHandEquals(p, WheatHoe.WheatHoe)) {
             if (b.getType() == Material.WHEAT) {
                 if (p.getInventory().firstEmpty() != -1) {
-                    p.getInventory().addItem(wheat);
+                    p.getInventory().addItem(product);
                     p.getInventory().addItem(seeds);
                 } else {
                     Location loc = b.getLocation();
-                    loc.getWorld().dropItemNaturally(loc, wheat);
+                    loc.getWorld().dropItemNaturally(loc, product);
                     loc.getWorld().dropItemNaturally(loc, seeds);
                 }
             }
@@ -119,14 +110,32 @@ public class Listeners implements Listener {
         Block b = e.getBlock();
         e.setDropItems(false);
         int rIntProduct = Utils.randomInteger(5, 10);
-        ItemStack wheat = new ItemStack(Material.POTATO, rIntProduct);
+        ItemStack product = new ItemStack(Material.POTATO, rIntProduct);
         if(Utils.itemInHandEquals(p, PotatoHoe.PotatoHoe)) {
             if (b.getType() == Material.POTATOES) {
                 if (p.getInventory().firstEmpty() != -1) {
-                    p.getInventory().addItem(wheat);
+                    p.getInventory().addItem(product);
                 } else {
                     Location loc = b.getLocation();
-                    loc.getWorld().dropItemNaturally(loc, wheat);
+                    loc.getWorld().dropItemNaturally(loc, product);
+                }
+            }
+        }
+    }
+    @EventHandler
+    public void onPlayerHarvestCarrots(BlockBreakEvent e){
+        Player p = e.getPlayer();
+        Block b = e.getBlock();
+        e.setDropItems(false);
+        int rIntProduct = Utils.randomInteger(5, 10);
+        ItemStack product = new ItemStack(Material.CARROT, rIntProduct);
+        if(Utils.itemInHandEquals(p, CarrotHoe.CarrotHoe)) {
+            if (b.getType() == Material.POTATOES) {
+                if (p.getInventory().firstEmpty() != -1) {
+                    p.getInventory().addItem(product);
+                } else {
+                    Location loc = b.getLocation();
+                    loc.getWorld().dropItemNaturally(loc, product);
                 }
             }
         }
@@ -141,6 +150,7 @@ public class Listeners implements Listener {
             p.getInventory().addItem(TillingHoe.TillingHoe);
             p.getInventory().addItem(WheatHoe.WheatHoe);
             p.getInventory().addItem(PotatoHoe.PotatoHoe);
+            p.getInventory().addItem(CarrotHoe.CarrotHoe);
         }
     }
 }
