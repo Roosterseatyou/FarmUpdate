@@ -23,7 +23,7 @@ public class WheatHoe {
         ItemMeta meta = item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(Component.text("Wheat Hoe").color(TextColor.fromHexString("9606A5")));
-        lore.add(Component.text("Abitity:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
+        lore.add(Component.text("Ability:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         lore.add(Component.text("Extra harvest from Wheat").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
         meta.isUnbreakable();

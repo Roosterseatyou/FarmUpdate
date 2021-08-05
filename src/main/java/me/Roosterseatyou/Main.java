@@ -1,6 +1,6 @@
 package me.Roosterseatyou;
 
-import me.Roosterseatyou.events.Listeners;
+import me.Roosterseatyou.events.HoeListeners;
 import me.Roosterseatyou.items.hoes.*;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,7 +12,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new Listeners(), this);
+        getServer().getPluginManager().registerEvents(new HoeListeners(), this);
         TillingHoe.init();
         ReplantingHoe.init();
         WheatHoe.init();

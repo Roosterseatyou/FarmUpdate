@@ -25,7 +25,7 @@ public class TillingHoe {
         List<Component> lore = new ArrayList<>();
         meta.displayName(Component.text("Tilling Hoe").color(TextColor.fromHexString("9606A5")));
         meta.addEnchant(Enchantment.DURABILITY, 5, true);
-        lore.add(Component.text("Abitity:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
+        lore.add(Component.text("Ability:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         lore.add(Component.text("Tills in a 3x3").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
         item.setItemMeta(meta);
