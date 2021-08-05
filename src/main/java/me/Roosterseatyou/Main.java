@@ -1,6 +1,7 @@
 package me.Roosterseatyou;
 
 import me.Roosterseatyou.events.HoeListeners;
+import me.Roosterseatyou.items.armor.SpeedBoots;
 import me.Roosterseatyou.items.hoes.*;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,7 @@ public final class Main extends JavaPlugin {
         WheatHoe.init();
         PotatoHoe.init();
         CarrotHoe.init();
+        SpeedBoots.init();
         instance = this;
 
     }

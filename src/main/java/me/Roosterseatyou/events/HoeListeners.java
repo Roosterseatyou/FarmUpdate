@@ -1,5 +1,6 @@
 package me.Roosterseatyou.events;
 
+import me.Roosterseatyou.items.armor.SpeedBoots;
 import me.Roosterseatyou.items.hoes.*;
 import me.Roosterseatyou.utils.Utils;
 import org.bukkit.Location;
@@ -141,7 +142,6 @@ public class HoeListeners implements Listener {
             }
         }
     }
-
     //Just need to get the item for testing lmao. Will remove after i decide on a recipe :)
     @EventHandler
     public void onPlayerShift(PlayerToggleSneakEvent e){
@@ -152,6 +152,7 @@ public class HoeListeners implements Listener {
             p.getInventory().addItem(WheatHoe.WheatHoe);
             p.getInventory().addItem(PotatoHoe.PotatoHoe);
             p.getInventory().addItem(CarrotHoe.CarrotHoe);
+            p.getInventory().addItem(SpeedBoots.SpeedBoots);
         }
     }
 }
