@@ -1,5 +1,6 @@
 package me.Roosterseatyou.events;
 
+import me.Roosterseatyou.Main;
 import me.Roosterseatyou.items.armor.SpeedBoots;
 import me.Roosterseatyou.items.hoes.*;
 import me.Roosterseatyou.utils.Utils;
@@ -12,10 +13,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockPhysicsEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +80,7 @@ public class HoeListeners implements Listener {
                     if (Utils.isSeedInInv(p, cropBlockMat)) {
                         Location loc = b.getLocation();
                         Utils.removeSeed(p, seed);
-                        Utils.replantCrop(loc, cropBlockMat);
+                        Utils.replantCrop(loc, cropBlockMat, Main.getInstance());
                     }
                 }
             }
@@ -153,6 +154,7 @@ public class HoeListeners implements Listener {
             p.getInventory().addItem(PotatoHoe.PotatoHoe);
             p.getInventory().addItem(CarrotHoe.CarrotHoe);
             p.getInventory().addItem(SpeedBoots.SpeedBoots);
+            p.getInventory().addItem(FarmHoe.FarmHoe);
         }
     }
 }

@@ -1,6 +1,5 @@
 package me.Roosterseatyou.utils;
 
-import me.Roosterseatyou.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -9,6 +8,7 @@ import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.util.BlockIterator;
 
 import java.util.Collection;
@@ -61,8 +61,8 @@ public class Utils {
         ItemStack mainHand = p.getInventory().getItemInMainHand();
         return Objects.equals(mainHand, item);
     }
-    public static void replantCrop(Location loc, Material seed){
-        Bukkit.getScheduler().runTaskLater(Main.getInstance(), () -> {
+    public static void replantCrop(Location loc, Material seed, Plugin plugin){
+        Bukkit.getScheduler().runTaskLater(plugin, () -> {
             loc.getBlock().setType(seed);
         }, 20L);
     }
