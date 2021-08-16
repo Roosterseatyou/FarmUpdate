@@ -143,6 +143,40 @@ public class HoeListeners implements Listener {
             }
         }
     }
+    @EventHandler
+    public void onCaneBreak(BlockBreakEvent e) {
+        Block block = e.getBlock();
+        Player p = e.getPlayer();
+        int sugarCane = 0;
+        int newY = 0;
+        if (Utils.itemInHandEquals(p, CaneHoe.CaneHoe)) {
+            for (int y = block.getY(); y != 255; y++) {
+                // get the block relative to that height
+                Location newLoc = new Location(block.getWorld(), block.getX(), y, block.getZ());
+                if (newLoc.getBlock().getType() == Material.SUGAR_CANE) {
+                    sugarCane++;
+                } else {
+                    int rInt = Utils.randomInteger(1, 100);
+                    if(rInt <=5) {
+                        newY = y;
+                        p.getInventory().addItem(new ItemStack(Material.SUGAR_CANE, sugarCane*2));
+                        p.sendMessage("hi");
+                        break;
+                    }else{
+                        newY = y;
+                        p.getInventory().addItem(new ItemStack(Material.SUGAR_CANE, sugarCane));
+                        break;
+                    }
+                }
+            }
+            for (int y = newY; y != block.getY(); y--) {
+                Location newLoc = new Location(block.getWorld(), block.getX(), y, block.getZ());
+                newLoc.getBlock().setType(Material.AIR);
+            }
+            block.setType(Material.AIR);
+        }
+    }
+
     //Just need to get the item for testing lmao. Will remove after i decide on a recipe :)
     @EventHandler
     public void onPlayerShift(PlayerToggleSneakEvent e){
@@ -155,6 +189,7 @@ public class HoeListeners implements Listener {
             p.getInventory().addItem(CarrotHoe.CarrotHoe);
             p.getInventory().addItem(SpeedBoots.SpeedBoots);
             p.getInventory().addItem(FarmHoe.FarmHoe);
+            p.getInventory().addItem(CaneHoe.CaneHoe);
         }
     }
 }

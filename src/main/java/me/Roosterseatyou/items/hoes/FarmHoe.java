@@ -48,6 +48,18 @@ public class FarmHoe {
         ch.setIngredient('H', item);
         Bukkit.getServer().addRecipe(ch);
 
+        ShapedRecipe ph = new ShapedRecipe(NamespacedKey.minecraft("carrothoe"), PotatoHoe.PotatoHoe);
+        ph.shape("PPP", "PHP", "PPP");
+        ph.setIngredient('P', CompactedCarrots.CompactedCarrots);
+        ph.setIngredient('H', item);
+        Bukkit.getServer().addRecipe(ph);
+
+        ShapedRecipe th = new ShapedRecipe(NamespacedKey.minecraft("tillinghoe"), TillingHoe.TillingHoe);
+        th.shape("HHH", "HFH", "HHH");
+        th.setIngredient('H', Material.GOLDEN_HOE);
+        th.setIngredient('F', item);
+        Bukkit.getServer().addRecipe(th);
+
 
     }
 }
