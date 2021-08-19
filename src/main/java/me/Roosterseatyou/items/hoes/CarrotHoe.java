@@ -27,6 +27,7 @@ public class CarrotHoe {
         meta.addEnchant(Enchantment.DURABILITY, 5, true);
         lore.add(Component.text("Ability:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         lore.add(Component.text("Extra harvest from Carrots").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
+        meta.isUnbreakable();
         meta.lore(lore);
         item.setItemMeta(meta);
         CarrotHoe = item;

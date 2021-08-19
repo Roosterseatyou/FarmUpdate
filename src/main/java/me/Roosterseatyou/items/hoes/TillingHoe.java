@@ -28,6 +28,7 @@ public class TillingHoe {
         lore.add(Component.text("Ability:").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         lore.add(Component.text("Tills in a 3x3").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
+        meta.isUnbreakable();
         item.setItemMeta(meta);
         TillingHoe = item;
     }

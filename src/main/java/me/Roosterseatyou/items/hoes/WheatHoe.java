@@ -27,6 +27,7 @@ public class WheatHoe {
         lore.add(Component.text("Extra harvest from Wheat").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
         meta.isUnbreakable();
+        meta.isUnbreakable();
         item.setItemMeta(meta);
         WheatHoe = item;
     }

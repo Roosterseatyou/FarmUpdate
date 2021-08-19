@@ -1,7 +1,6 @@
 package me.Roosterseatyou.events;
 
 import me.Roosterseatyou.Main;
-import me.Roosterseatyou.items.armor.SpeedBoots;
 import me.Roosterseatyou.items.hoes.*;
 import me.Roosterseatyou.utils.Utils;
 import org.bukkit.Location;
@@ -174,21 +173,6 @@ public class HoeListeners implements Listener {
                 newLoc.getBlock().setType(Material.AIR);
             }
             block.setType(Material.AIR);
-        }
-    }
-
-    //Just need to get the item for testing lmao. Will remove after i decide on a recipe :)
-    @EventHandler
-    public void onPlayerShift(PlayerToggleSneakEvent e){
-        Player p = e.getPlayer();
-        if(p.isSneaking()) {
-            p.getInventory().addItem(ReplantingHoe.ReplantHoe);
-            p.getInventory().addItem(TillingHoe.TillingHoe);
-            p.getInventory().addItem(WheatHoe.WheatHoe);
-            p.getInventory().addItem(PotatoHoe.PotatoHoe);
-            p.getInventory().addItem(CarrotHoe.CarrotHoe);
-            p.getInventory().addItem(FarmHoe.FarmHoe);
-            p.getInventory().addItem(CaneHoe.CaneHoe);
         }
     }
 }

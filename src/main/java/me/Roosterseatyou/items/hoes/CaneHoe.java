@@ -32,6 +32,7 @@ public class CaneHoe {
         lore.add(Component.text("Gives a 5% chance for Double drops on Sugar Cane").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
         item.setItemMeta(meta);
+        meta.isUnbreakable();
         CaneHoe = item;
     }
 }

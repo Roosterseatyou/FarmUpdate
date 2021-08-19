@@ -1,7 +1,10 @@
 package me.Roosterseatyou;
 
 import me.Roosterseatyou.events.HoeListeners;
-import me.Roosterseatyou.items.armor.SpeedBoots;
+import me.Roosterseatyou.items.armor.SugarCane.SpeedBoots;
+import me.Roosterseatyou.items.armor.SugarCane.SpeedChest;
+import me.Roosterseatyou.items.armor.SugarCane.SpeedHelm;
+import me.Roosterseatyou.items.armor.SugarCane.SpeedLegs;
 import me.Roosterseatyou.items.bundles.CaneBundle;
 import me.Roosterseatyou.items.bundles.CarrotBundle;
 import me.Roosterseatyou.items.bundles.PotatoBundle;
@@ -23,6 +26,10 @@ public final class Main extends JavaPlugin {
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(new HoeListeners(), this);
         TillingHoe.init();
+        SpeedBoots.init();
+        SpeedLegs.init();
+        SpeedChest.init();
+        SpeedHelm.init();
         CompactedCarrots.init();
         ReplantingHoe.init();
         WheatHoe.init();

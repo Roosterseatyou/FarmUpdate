@@ -34,6 +34,7 @@ public class FarmHoe {
         meta.addEnchant(Enchantment.DURABILITY, 5, true);
         lore.add(Component.text("Combine this with 8 of your Compacted Crop of choice!").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
+        meta.isUnbreakable();
         item.setItemMeta(meta);
         FarmHoe = item;
 
