@@ -2,8 +2,10 @@ package me.Roosterseatyou;
 
 import me.Roosterseatyou.events.HoeListeners;
 import me.Roosterseatyou.items.armor.SpeedBoots;
+import me.Roosterseatyou.items.bundles.CaneBundle;
 import me.Roosterseatyou.items.bundles.CarrotBundle;
 import me.Roosterseatyou.items.bundles.PotatoBundle;
+import me.Roosterseatyou.items.compacted.CompactedCane;
 import me.Roosterseatyou.items.compacted.CompactedCarrots;
 import me.Roosterseatyou.items.compacted.CompactedPotatoes;
 import me.Roosterseatyou.items.compacted.CompactedWheat;
@@ -26,12 +28,14 @@ public final class Main extends JavaPlugin {
         WheatHoe.init();
         PotatoHoe.init();
         CarrotHoe.init();
-        SpeedBoots.init();
         CompactedWheat.init();
-        FarmHoe.init();
+        CompactedPotatoes.init();
+        CaneHoe.init();
+        CompactedCane.init();
         CarrotBundle.init();
         PotatoBundle.init();
-        CompactedPotatoes.init();
+        CaneBundle.init();
+        FarmHoe.init();
         instance = this;
 
     }

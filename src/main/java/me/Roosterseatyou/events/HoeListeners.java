@@ -187,7 +187,6 @@ public class HoeListeners implements Listener {
             p.getInventory().addItem(WheatHoe.WheatHoe);
             p.getInventory().addItem(PotatoHoe.PotatoHoe);
             p.getInventory().addItem(CarrotHoe.CarrotHoe);
-            p.getInventory().addItem(SpeedBoots.SpeedBoots);
             p.getInventory().addItem(FarmHoe.FarmHoe);
             p.getInventory().addItem(CaneHoe.CaneHoe);
         }

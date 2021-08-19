@@ -1,6 +1,6 @@
 package me.Roosterseatyou.items.bundles;
 
-import me.Roosterseatyou.items.compacted.CompactedCarrots;
+import me.Roosterseatyou.items.compacted.CompactedCane;
 import me.Roosterseatyou.items.compacted.CompactedPotatoes;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -16,31 +16,31 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PotatoBundle {
-    public static ItemStack PotatoBundle;
+public class CaneBundle {
+    public static ItemStack CaneBundle;
 
     public static ItemStack init() {
-        potatoBundle();
+        caneBundle();
         return null;
     }
 
-    public static void potatoBundle(){
-        ItemStack item = new ItemStack(Material.POTATO);
+    public static void caneBundle(){
+        ItemStack item = new ItemStack(Material.SUGAR_CANE);
         ItemMeta meta = item.getItemMeta();
         List<Component> lore = new ArrayList<>();
-        meta.displayName(Component.text("Bundle of Potatoes").color(TextColor.fromHexString("9606A5")));
+        meta.displayName(Component.text("Bundle of Sugar Cane").color(TextColor.fromHexString("9606A5")));
         meta.addEnchant(Enchantment.DURABILITY, 5, true);
-        lore.add(Component.text("Bundled form of Potatoes").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
+        lore.add(Component.text("Bundled form of Sugar Cane").decorate(TextDecoration.BOLD).color(TextColor.fromHexString("FF0000")));
         meta.lore(lore);
         item.setItemMeta(meta);
-        PotatoBundle = item;
+        CaneBundle = item;
 
-        ShapedRecipe pb = new ShapedRecipe(NamespacedKey.minecraft("potatobundle"), item);
-        pb.shape("PPP", "PPP", "PPP");
-        pb.setIngredient('P', Material.POTATO);
-        Bukkit.getServer().addRecipe(pb);
+        ShapedRecipe cb = new ShapedRecipe(NamespacedKey.minecraft("canebundle"), item);
+        cb.shape("CCC", "CCC", "CCC");
+        cb.setIngredient('C', Material.SUGAR_CANE);
+        Bukkit.getServer().addRecipe(cb);
 
-        ShapedRecipe cp = new ShapedRecipe(NamespacedKey.minecraft("compactpotato"), CompactedPotatoes.CompactedPotato);
+        ShapedRecipe cp = new ShapedRecipe(NamespacedKey.minecraft("compactcane"), CompactedCane.CompactedCane);
         cp.shape("BBB", "BBB", "BBB");
         cp.setIngredient('B', item);
         Bukkit.getServer().addRecipe(cp);

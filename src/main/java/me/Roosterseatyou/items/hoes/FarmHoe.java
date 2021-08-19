@@ -1,6 +1,8 @@
 package me.Roosterseatyou.items.hoes;
 
+import me.Roosterseatyou.items.compacted.CompactedCane;
 import me.Roosterseatyou.items.compacted.CompactedCarrots;
+import me.Roosterseatyou.items.compacted.CompactedPotatoes;
 import me.Roosterseatyou.items.compacted.CompactedWheat;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -48,17 +50,40 @@ public class FarmHoe {
         ch.setIngredient('H', item);
         Bukkit.getServer().addRecipe(ch);
 
-        ShapedRecipe ph = new ShapedRecipe(NamespacedKey.minecraft("carrothoe"), PotatoHoe.PotatoHoe);
+        ShapedRecipe ph = new ShapedRecipe(NamespacedKey.minecraft("potatohoe"), PotatoHoe.PotatoHoe);
         ph.shape("PPP", "PHP", "PPP");
-        ph.setIngredient('P', CompactedCarrots.CompactedCarrots);
+        ph.setIngredient('P', CompactedPotatoes.CompactedPotato);
         ph.setIngredient('H', item);
         Bukkit.getServer().addRecipe(ph);
 
+        ShapedRecipe cah = new ShapedRecipe(NamespacedKey.minecraft("canehoe"), CaneHoe.CaneHoe);
+        cah.shape("CCC", "CHC", "CCC");
+        cah.setIngredient('C', CompactedCane.CompactedCane);
+        cah.setIngredient('H', item);
+        Bukkit.getServer().addRecipe(cah);
+
         ShapedRecipe th = new ShapedRecipe(NamespacedKey.minecraft("tillinghoe"), TillingHoe.TillingHoe);
         th.shape("HHH", "HFH", "HHH");
-        th.setIngredient('H', Material.GOLDEN_HOE);
+        th.setIngredient('H', Material.DIAMOND_HOE);
         th.setIngredient('F', item);
         Bukkit.getServer().addRecipe(th);
+
+        ShapedRecipe rh = new ShapedRecipe(NamespacedKey.minecraft("replanthoe"), ReplantingHoe.ReplantHoe);
+        rh.shape("CWP", "PFP", "CWP");
+        rh.setIngredient('C', CompactedCarrots.CompactedCarrots);
+        rh.setIngredient('W', CompactedWheat.CompactedWheat);
+        rh.setIngredient('P', CompactedPotatoes.CompactedPotato);
+        rh.setIngredient('F', item);
+        Bukkit.getServer().addRecipe(rh);
+
+        ShapedRecipe fh = new ShapedRecipe(NamespacedKey.minecraft("farmhoe"), item);
+        fh.shape("CWP", "SHS", "CWP");
+        fh.setIngredient('C', CompactedCarrots.CompactedCarrots);
+        fh.setIngredient('W', CompactedWheat.CompactedWheat);
+        fh.setIngredient('S', CompactedCane.CompactedCane);
+        fh.setIngredient('P', CompactedPotatoes.CompactedPotato);
+        fh.setIngredient('H', Material.STONE_HOE);
+        Bukkit.getServer().addRecipe(fh);
 
 
     }
