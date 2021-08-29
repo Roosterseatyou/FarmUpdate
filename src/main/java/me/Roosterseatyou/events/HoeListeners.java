@@ -88,13 +88,13 @@ public class HoeListeners implements Listener {
     public void onPlayerHarvestWheat(BlockBreakEvent e){
         Player p = e.getPlayer();
         Block b = e.getBlock();
+        if(b.getType().equals(Material.WHEAT)){
         e.setDropItems(false);
         int rIntWheat = Utils.randomInteger(3, 8);
         int rIntSeeds = Utils.randomInteger(2, 5);
         ItemStack product = new ItemStack(Material.WHEAT, rIntWheat);
         ItemStack seeds = new ItemStack(Material.WHEAT_SEEDS, rIntSeeds);
         if(Utils.itemInHandEquals(p, WheatHoe.WheatHoe)) {
-            if (b.getType() == Material.WHEAT) {
                 if (p.getInventory().firstEmpty() != -1) {
                     p.getInventory().addItem(product);
                     p.getInventory().addItem(seeds);
@@ -110,11 +110,11 @@ public class HoeListeners implements Listener {
     public void onPlayerHarvestPotatoes(BlockBreakEvent e){
         Player p = e.getPlayer();
         Block b = e.getBlock();
+        if(b.getType().equals(Material.POTATOES)){
         e.setDropItems(false);
         int rIntProduct = Utils.randomInteger(5, 10);
         ItemStack product = new ItemStack(Material.POTATO, rIntProduct);
         if(Utils.itemInHandEquals(p, PotatoHoe.PotatoHoe)) {
-            if (b.getType() == Material.POTATOES) {
                 if (p.getInventory().firstEmpty() != -1) {
                     p.getInventory().addItem(product);
                 } else {
@@ -128,11 +128,11 @@ public class HoeListeners implements Listener {
     public void onPlayerHarvestCarrots(BlockBreakEvent e){
         Player p = e.getPlayer();
         Block b = e.getBlock();
+        if (b.getType() == Material.POTATOES) {
         e.setDropItems(false);
         int rIntProduct = Utils.randomInteger(5, 10);
         ItemStack product = new ItemStack(Material.CARROT, rIntProduct);
         if(Utils.itemInHandEquals(p, CarrotHoe.CarrotHoe)) {
-            if (b.getType() == Material.POTATOES) {
                 if (p.getInventory().firstEmpty() != -1) {
                     p.getInventory().addItem(product);
                 } else {
